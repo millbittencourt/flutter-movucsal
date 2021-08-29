@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:movucsal/main.dart';
 import 'package:movucsal/widgets/ExpandedButton.dart';
 
 class RegisterPage extends StatelessWidget {
@@ -39,7 +40,7 @@ class RegisterPage extends StatelessWidget {
             ExpandedButton(
               title: 'Voltar à página inicial',
               color: Theme.of(context).primaryColor,
-              handleOnClick: () {},
+              handleOnClick: () => Navigator.of(context).pop(context),
             ),
           ],
         ),
