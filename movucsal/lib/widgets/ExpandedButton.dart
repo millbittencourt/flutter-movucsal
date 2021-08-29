@@ -9,7 +9,7 @@ class ExpandedButton extends StatelessWidget {
 
   ButtonStyle style(Color color) {
     return ElevatedButton.styleFrom(
-      textStyle: const TextStyle(fontSize: 30),
+      textStyle: TextStyle(fontSize: 30),
       padding: EdgeInsets.all(8),
       primary: color,
       shape: RoundedRectangleBorder(
@@ -22,7 +22,7 @@ class ExpandedButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        const SizedBox(width: 10),
+        SizedBox(width: 10),
         Expanded(
           child: ElevatedButton(
             style: style(color),
@@ -30,7 +30,7 @@ class ExpandedButton extends StatelessWidget {
             child: Text(title),
           ),
         ),
-        const SizedBox(width: 10),
+        SizedBox(width: 10),
       ],
     );
   }
