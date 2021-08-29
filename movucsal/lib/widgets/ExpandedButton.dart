@@ -1,24 +1,17 @@
 import 'package:flutter/material.dart';
 
-class ExpandedButton extends StatefulWidget {
-  ExpandedButton({Key? key, required this.title, required this.color})
-      : super(key: key);
+class ExpandedButton extends StatelessWidget {
+  ExpandedButton({required this.title, required this.color});
   final String title;
   final Color color;
 
-  @override
-  _ExpandedButtonState createState() => _ExpandedButtonState();
-}
-
-class _ExpandedButtonState extends State<ExpandedButton> {
   ButtonStyle style(Color color) {
     return ElevatedButton.styleFrom(
       textStyle: const TextStyle(fontSize: 30),
       padding: EdgeInsets.all(8),
-      primary: widget.color,
+      primary: color,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(16),
-        // side: BorderSide(color: color),
       ),
     );
   }
@@ -30,9 +23,9 @@ class _ExpandedButtonState extends State<ExpandedButton> {
         const SizedBox(width: 10),
         Expanded(
           child: ElevatedButton(
-            style: style(widget.color),
+            style: style(color),
             onPressed: () {},
-            child: Text(widget.title),
+            child: Text(title),
           ),
         ),
         const SizedBox(width: 10),
