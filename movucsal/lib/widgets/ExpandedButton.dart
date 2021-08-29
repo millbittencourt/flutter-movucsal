@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 
 class ExpandedButton extends StatelessWidget {
-  ExpandedButton({required this.title, required this.color});
+  ExpandedButton(
+      {required this.title, required this.color, required this.handleOnClick});
   final String title;
   final Color color;
+  final Function handleOnClick;
 
   ButtonStyle style(Color color) {
     return ElevatedButton.styleFrom(
@@ -24,7 +26,7 @@ class ExpandedButton extends StatelessWidget {
         Expanded(
           child: ElevatedButton(
             style: style(color),
-            onPressed: () {},
+            onPressed: () => handleOnClick(),
             child: Text(title),
           ),
         ),

@@ -1,7 +1,9 @@
 import 'dart:math';
 
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:movucsal/pages/RegisterPage.dart';
 import 'package:movucsal/widgets/ExpandedButton.dart';
 
 void main() {
@@ -24,6 +26,10 @@ class MyApp extends StatelessWidget {
 class MyOtherHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    handleRegisterClick() => Navigator.of(context).push(
+          MaterialPageRoute(builder: (_) => RegisterPage()),
+        );
+
     return Scaffold(
       // appBar: AppBar(
       //   title: Text('Nem sei'),
@@ -40,11 +46,13 @@ class MyOtherHome extends StatelessWidget {
             ExpandedButton(
               title: 'Fazer cadastro',
               color: Theme.of(context).primaryColor,
+              handleOnClick: handleRegisterClick,
             ),
             const SizedBox(height: 30),
             ExpandedButton(
               title: 'Encontrar um caminho',
               color: Colors.deepOrange,
+              handleOnClick: () {},
             ),
             const SizedBox(height: 30),
           ],
