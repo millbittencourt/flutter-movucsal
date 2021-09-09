@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
+import 'package:movucsal/pages/FindPathPage.dart';
 import 'package:movucsal/pages/RegisterPage.dart';
 import 'package:movucsal/widgets/ExpandedButton.dart';
 
@@ -15,16 +15,20 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.deepPurple,
       ),
-      home: MyOtherHome(),
+      home: HomePage(),
     );
   }
 }
 
-class MyOtherHome extends StatelessWidget {
+class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     handleRegisterClick() => Navigator.of(context).push(
           MaterialPageRoute(builder: (_) => RegisterPage()),
+        );
+
+    handleFindPathClick() => Navigator.of(context).push(
+          MaterialPageRoute(builder: (_) => FindPathPage()),
         );
 
     return Scaffold(
@@ -46,7 +50,7 @@ class MyOtherHome extends StatelessWidget {
             ExpandedButton(
               title: 'Encontrar um caminho',
               color: Colors.deepOrange,
-              handleOnClick: () {},
+              handleOnClick: handleFindPathClick,
             ),
             const SizedBox(height: 30),
           ],
