@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:movucsal/main.dart';
 import 'package:movucsal/widgets/ExpandedButton.dart';
 
 class RegisterPage extends StatelessWidget {
